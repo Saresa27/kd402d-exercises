@@ -1,6 +1,6 @@
 // Exercise 3: tempo arithmetic
 
-const bpm = 160; // beats per minute
+const bpm = 90; // beats per minute
 const beat = 60 / bpm; // how long one beat lasts, in seconds
 console.log("Exercise 3: one beat lasts " + beat + " seconds");
 // TODO 3a: log the beat in milliseconds, rounded: Math.round(beat * 1000)
