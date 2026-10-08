@@ -12,6 +12,9 @@ console.log("Exercise 2: fullNote is " + fullNote);
 function exercise2(start) {
   synth.triggerAttackRelease(fullNote, "4n", start);
 }
+octave = octave + 1;
+fullNote = pitchName + octave;
+console.log(fullNote);
 
 // ---------- You don't need to change anything below this line ----------
 
