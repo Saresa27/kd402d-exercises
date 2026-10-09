@@ -9,6 +9,9 @@
 function exercise1(start) {
   const note = "C4";
   const duration = "8n";
+  let isMuted = false;
+
+  console.log("Exercise 1: isMuted is " + isMuted);
 
   // TODO 1a: under duration, store a yes/no fact about the sound: let isMuted = false;
   //          No quotation marks: false is not text, it's a boolean.
@@ -24,4 +27,4 @@ function exercise1(start) {
 
 // ---------- You don't need to change anything below this line ----------
 
-playOnClick("play-1", exercise1);
+ playOnClick("play-1", exercise1);
