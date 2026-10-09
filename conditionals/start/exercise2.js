@@ -8,6 +8,7 @@ function exercise2(start) {
   synth.triggerAttackRelease("E4", duration, start);
 
   console.log("Exercise 2: is duration 8n? " + (duration === "8n"));
+  
   // Keep the round brackets around the comparison. Without them, JavaScript glues the text
   // and duration together first, and compares that.
 
@@ -15,6 +16,9 @@ function exercise2(start) {
   //            duration !== "4n"   is duration not 4n?
   //            bpm > 100           is the tempo more than 100?
   // TODO 2b: change duration to "4n" and bpm to 120. Predict which answers flip, then press again.
+  console.log("Exercise 2: is duration not 4n? " + (duration !=="4n"));
+  console.log("Exercise 2: is the tempo more than 100? " + (bpm > 100));
+
 }
 
 // ---------- You don't need to change anything below this line ----------
