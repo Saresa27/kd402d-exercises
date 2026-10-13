@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User input: finished</title>
+    <link rel="icon" href="data:," />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 44rem;
+        margin: 3rem auto;
+        padding: 0 1rem;
+        line-height: 1.5;
+      }
+      h2 {
+        margin-top: 2rem;
+        font-size: 1.1rem;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+      }
+      kbd {
+        font-family: ui-monospace, monospace;
+        border: 1px solid #999;
+        border-radius: 3px;
+        padding: 0 0.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User input: finished</h1>
+    <p>Open the browser console to see what the code logs.</p>
+
+    <button id="sound-on">Switch the sound on</button>
+
+    <h2>Then play</h2>
+    <p>
+      Click anywhere on this page so it has the keyboard, then press keys. If
+      you click in the console, your key presses go there instead.
+    </p>
+    <p>
+      <kbd>a</kbd> to <kbd>k</kbd> play the white keys, <kbd>w</kbd>
+      <kbd>e</kbd> <kbd>t</kbd> <kbd>y</kbd> <kbd>u</kbd> the black keys.
+      <kbd>z</kbd> and <kbd>x</kbd> move down or up an octave. The space bar
+      switches the sound.
+    </p>
+
+    <!-- Tone.js: the library from Tuesday afternoon. It needs an internet connection. -->
+    <script src="https://unpkg.com/tone@15.1.22/build/Tone.js"></script>
+    <script src="setup.js"></script>
+    <script src="instrument.js"></script>
+  </body>
+</html>
