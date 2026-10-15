@@ -11,14 +11,46 @@ let octave = 4;
 function handleKeyDown(event) {
   Tone.start(); // sound can only start after a key press or a click
   console.log(event.key);
-
-  if (event.key === "a") {
-    synth.triggerAttackRelease("C4", "8n");
-  } else if (event.key === "s") {
-    synth.triggerAttackRelease("D4", "8n");
-  } else if (event.key === "d") {
-    synth.triggerAttackRelease("E4", "8n");
+  let playOctave = octave
+    if (event.shiftKey) {
+      playOctave = octave + 1;
   }
+const note = noteForKey(event.key.toLowerCase(), playOctave);
+   if (note !== "") {
+    synth.triggerAttackRelease(note, "8n");
+    console.log("Key " + event.key + " played " + note);
+  } else {
+    console.log("Key " + event.key + " plays poop")
+  }
+   }
+
+
+function letterNote(key, oct) {
+  if (key.length === 1 && key >= "a" && key <= "g") {
+    return key.toUpperCase() + oct;
+  }
+
+}
+
+function noteForKey (key, octave) {
+  if (key === "a") {
+    return "C" + octave;
+  } else if (key === "s") {
+    return "D" + octave;
+  } else if (key === "d") {
+    return "E" + octave;
+  } else if (key === "f") {
+    return "F" + octave;
+  } else if (key === "g") {
+    return "G" + octave;
+  } else if (key === "h") {
+    return "A" + octave;
+  } else if (key === "j") {
+    return "B" + octave;
+  } else if (key === "k") {
+    return "C" + (octave + 1);
+  }
+  return "";
 }
 
 document.addEventListener("keydown", handleKeyDown);
@@ -28,6 +60,10 @@ document.addEventListener("keydown", handleKeyDown);
 // 5a Predict first, in a comment: what do these give? Strings compare in alphabetical order.
 //      "c" >= "a"      "h" <= "g"      "Enter" >= "a"
 //    Log them to check:  console.log("c" >= "a");
+// console.log("c" >= "a"); // true
+// console.log("h" <= "g"); // false
+// console.log("Enter" >= "a"); // false
+
 // TODO 5b: replace the whole if / else if chain in handleKeyDown with:
 //            if (event.key.length === 1 && event.key >= "a" && event.key <= "g") {
 //              const note = event.key.toUpperCase() + octave;
@@ -35,6 +71,7 @@ document.addEventListener("keydown", handleKeyDown);
 //            }
 //          Press a to g. Then press h, Enter and Shift: nothing should play.
 // TODO 5c: in a comment, say what event.key.length === 1 checks, and why it's there.
+//
 
 // ---------- Exercise 6: keys are piano keys ----------
 // Now the position on the keyboard decides the note: the home row is a piano's white keys.
